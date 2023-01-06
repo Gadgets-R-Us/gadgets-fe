@@ -1,12 +1,17 @@
 import { TCategories } from "../../containers/CategoriesWrapper";
+import { StyledCategories } from "./styledCategories";
 
 const Categories = ({ category, profilePicture, description }: TCategories) => {
   return (
-    <>
-      <img src={profilePicture} alt={`Main graphic for ${category}`} />
-      <h2>{description}</h2>
+    <StyledCategories>
+      <img
+        className="CategoriesImage"
+        src={profilePicture}
+        alt={`Main graphic for ${category}`}
+      />
+      <h2 className="CategoriesDescription">{description}</h2>
       <button className="ShopAll Button">{`Shop All ${category}`}</button>
-    </>
+    </StyledCategories>
   );
 };
 
