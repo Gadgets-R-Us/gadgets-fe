@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App/styles.css";
 
 const App = () => {
   return <div className="App"></div>;
