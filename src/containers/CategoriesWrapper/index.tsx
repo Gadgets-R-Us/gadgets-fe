@@ -25,18 +25,16 @@ const CategoriesWrapper = () => {
     categories &&
     categories.map((category: TCategories) => {
       return (
-        <StyledCategoriesWrapper>
-          <Categories
-            key={category.id}
-            category={category.category}
-            profilePicture={category.profilePicture}
-            description={category.description}
-          />
-        </StyledCategoriesWrapper>
+        <Categories
+          key={category.id}
+          category={category.category}
+          profilePicture={category.profilePicture}
+          description={category.description}
+        />
       );
     });
 
-  return <>{allCategories}</>;
+  return <StyledCategoriesWrapper>{allCategories}</StyledCategoriesWrapper>;
 };
 
 export default CategoriesWrapper;
