@@ -12,10 +12,18 @@ const App = () => {
       <Routes>
         <Route
           path="/drones"
-          element={<CategoryWrapper category="drones" />}
+          element={<CategoryWrapper category="Drones" />}
         ></Route>
-        {/* <Route path="/scooters" element={<CategoryWrapper />}></Route>
-        <Route path="/consoles" element={<CategoryWrapper />}></Route> */}
+
+        <Route
+          path="/scooters"
+          element={<CategoryWrapper category="Scooters" />}
+        ></Route>
+
+        <Route
+          path="/consoles"
+          element={<CategoryWrapper category="Consoles" />}
+        ></Route>
 
         <Route path="/" element={<CategoriesWrapper />}></Route>
       </Routes>

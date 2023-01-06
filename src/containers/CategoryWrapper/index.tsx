@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { fetchCategory } from "../../utils/apicalls";
 
 const CategoryWrapper = (category: any) => {
-  const [list, setList] = useState();
-
+  const [list, setList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchCategory(category);
+      const data = await fetchCategory(category.category);
       setList(data.data);
     };
     fetchData();
@@ -14,7 +13,7 @@ const CategoryWrapper = (category: any) => {
 
   return (
     <>
-      <h1>Category</h1>
+      <h1>{category.category}</h1>
       <select>
         <option>--Sort By--</option>
       </select>
