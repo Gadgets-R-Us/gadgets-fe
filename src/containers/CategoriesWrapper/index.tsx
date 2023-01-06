@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Categories from "../../components/Categories";
 import { fetchCategories } from "../../utils/apicalls";
+import { StyledCategoriesWrapper } from "./styledCategoriesWrapper";
 
 export type TCategories = {
   id?: number;
@@ -24,12 +25,14 @@ const CategoriesWrapper = () => {
     categories &&
     categories.map((category: TCategories) => {
       return (
-        <Categories
-          key={category.id}
-          category={category.category}
-          profilePicture={category.profilePicture}
-          description={category.description}
-        />
+        <StyledCategoriesWrapper>
+          <Categories
+            key={category.id}
+            category={category.category}
+            profilePicture={category.profilePicture}
+            description={category.description}
+          />
+        </StyledCategoriesWrapper>
       );
     });
 
