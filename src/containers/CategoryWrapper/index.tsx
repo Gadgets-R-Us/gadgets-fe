@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Category from "../../components/Category";
 import { fetchCategory } from "../../utils/apicalls";
+import { StyledCategoryWrapper } from "./styledCategoryWrapper";
 
 export type TITem = {
   id?: number;
@@ -37,14 +38,16 @@ const CategoryWrapper = (category: any) => {
   });
 
   return (
-    <>
-      <h1>{category.category}</h1>
-      <select>
-        <option>--Sort By--</option>
-      </select>
-
+    <StyledCategoryWrapper>
+      <div className="Subheader">
+        <h2>{category.category}</h2>
+        <select>
+          <option>--Sort By--</option>
+        </select>
+      </div>
       {allItems}
-    </>
+    </StyledCategoryWrapper>
   );
 };
+
 export default CategoryWrapper;
