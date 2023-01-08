@@ -45,7 +45,7 @@ const CategoryWrapper = (category: any) => {
           <option>--Sort By--</option>
         </select>
       </div>
-      {allItems}
+      <div className="Items">{allItems}</div>
     </StyledCategoryWrapper>
   );
 };

@@ -1,4 +1,5 @@
 import { TITem } from "../../containers/CategoryWrapper";
+import { StyledCategory } from "./styledCategory";
 
 const Category = ({
   image,
@@ -9,16 +10,16 @@ const Category = ({
   price,
 }: TITem) => {
   return (
-    <>
-      <img src={image} alt={name} />
+    <StyledCategory>
+      <img className="ItemImage" src={image} alt={name} />
       <h2>{name}</h2>
       <div className="ItemReputation">
         <p>{starCount}</p>
-        <p>{reviewCount}</p>
+        <p>({reviewCount})</p>
       </div>
-      <p>{color}</p>
-      <p>{price}</p>
-    </>
+      <p>Color: {color}</p>
+      <p>${price}</p>
+    </StyledCategory>
   );
 };
 export default Category;
