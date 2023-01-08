@@ -1,4 +1,4 @@
-import { TITem } from "../../containers/CategoryWrapper";
+import { TItem } from "../../containers/CategoryWrapper";
 import { StyledCategory } from "./styledCategory";
 
 const Category = ({
@@ -8,7 +8,9 @@ const Category = ({
   reviewCount,
   color,
   price,
-}: TITem) => {
+  item,
+}: TItem) => {
+  // console.log(item);
   return (
     <StyledCategory>
       <img className="ItemImage" src={image} alt={name} />
