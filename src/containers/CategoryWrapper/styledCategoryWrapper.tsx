@@ -5,6 +5,7 @@ export const StyledCategoryWrapper = styled.section`
   flex-direction: column;
   width: 90vw;
   margin-left: 5vw;
+  padding-top: 8vh;
 
   .Subheader {
     display: flex;
@@ -14,7 +15,7 @@ export const StyledCategoryWrapper = styled.section`
   }
 
   .Items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 `;
