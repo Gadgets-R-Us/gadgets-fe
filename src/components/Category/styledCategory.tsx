@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledCategory = styled.section`
   border: solid 3px red;
+  margin-bottom: 3vh;
 
   .ItemReputation {
     display: flex;

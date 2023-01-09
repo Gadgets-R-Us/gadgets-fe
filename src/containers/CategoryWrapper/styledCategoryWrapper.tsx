@@ -14,7 +14,7 @@ export const StyledCategoryWrapper = styled.section`
   }
 
   .Items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 `;
