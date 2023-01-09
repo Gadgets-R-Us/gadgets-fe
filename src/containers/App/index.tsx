@@ -3,6 +3,7 @@ import "../App/styles.css";
 import CategoriesWrapper from "../CategoriesWrapper";
 import { Route, Routes } from "react-router-dom";
 import CategoryWrapper from "../CategoryWrapper";
+import Item from "../../components/Item";
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
           path="/consoles"
           element={<CategoryWrapper category="Consoles" />}
         ></Route>
+
+        <Route path="/item/:name" element={<Item />}></Route>
 
         <Route path="/" element={<CategoriesWrapper />}></Route>
       </Routes>

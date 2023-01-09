@@ -3,7 +3,7 @@ import Category from "../../components/Category";
 import { fetchCategory } from "../../utils/apicalls";
 import { StyledCategoryWrapper } from "./styledCategoryWrapper";
 
-export type TITem = {
+export type TItem = {
   id?: number;
   image: string;
   name: string;
@@ -11,7 +11,14 @@ export type TITem = {
   reviewCount: number;
   color: string;
   price: number;
+  item: any;
+  // item: TItemDetails;
 };
+
+// export type TItemDetails = TItem & {
+//   specifications: string[];
+//   longDescription: string;
+// };
 
 const CategoryWrapper = (category: any) => {
   const [list, setList] = useState([]);
@@ -23,7 +30,8 @@ const CategoryWrapper = (category: any) => {
     fetchData();
   }, []);
 
-  const allItems = list.map((item: TITem) => {
+  const allItems = list.map((item: TItem) => {
+    // console.log(item, "<<item");
     return (
       <Category
         key={item.id}
@@ -33,6 +41,7 @@ const CategoryWrapper = (category: any) => {
         reviewCount={item.reviewCount}
         color={item.color}
         price={item.price}
+        item={item}
       />
     );
   });
