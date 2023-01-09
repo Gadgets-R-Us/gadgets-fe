@@ -2,6 +2,7 @@ import styled from "styled-components";
 export const StyledItem = styled.section`
   width: 80vw;
   margin-left: 10vw;
+  padding-top: 10vh;
 
   .ItemImage {
     height: 15rem;

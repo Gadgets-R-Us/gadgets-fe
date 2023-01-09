@@ -5,6 +5,7 @@ export const StyledCategoryWrapper = styled.section`
   flex-direction: column;
   width: 90vw;
   margin-left: 5vw;
+  padding-top: 8vh;
 
   .Subheader {
     display: flex;
