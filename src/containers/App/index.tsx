@@ -1,13 +1,14 @@
 import Navbar from "../../components/Navbar";
-import "../App/styles.css";
+// import "./styledApp.tsx";
 import CategoriesWrapper from "../CategoriesWrapper";
 import { Route, Routes } from "react-router-dom";
 import CategoryWrapper from "../CategoryWrapper";
 import Item from "../../components/Item";
+import { StyledApp } from "./styledApp";
 
 const App = () => {
   return (
-    <div className="App">
+    <StyledApp>
       <Navbar />
 
       <Routes>
@@ -30,7 +31,7 @@ const App = () => {
 
         <Route path="/" element={<CategoriesWrapper />}></Route>
       </Routes>
-    </div>
+    </StyledApp>
   );
 };
 
