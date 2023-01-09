@@ -6,7 +6,7 @@ const Item = () => {
   const params = location.state.item;
 
   const specs = params.specifications.map((spec: string) => {
-    return <li>{spec}</li>;
+    return <li key={spec}>{spec}</li>;
   });
 
   return (
