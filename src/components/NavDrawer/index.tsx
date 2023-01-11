@@ -3,18 +3,19 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-// import InboxIcon from "@mui/icons-material/MoveToInbox";
-// import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "../../images/menuLogo.png";
+import MenuIcon from "@mui/icons-material/Menu";
+import FlightIcon from "@mui/icons-material/Flight";
+import ElectricScooterIcon from "@mui/icons-material/ElectricScooter";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import { Link } from "react-router-dom";
 
 type Anchor = "left";
 
-export default function NavDrawer() {
+const NavDrawer = () => {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -33,38 +34,36 @@ export default function NavDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
-  const handleClick = (event: any) => {
-    console.log(event.target.innerText, "event");
-  };
-
   const list = (anchor: Anchor) => (
     <Box
-      //   sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Drones", "Scooters", "Consoles"].map((text, index) => (
+        {["Drones", "Scooters", "Consoles"].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton id={text} onClick={handleClick}>
-              <ListItemIcon>
-                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+            <Link to={`/${text.toLowerCase()}`}>
+              <ListItemButton>
+                <ListItemIcon>
+                  {text === "Drones" && <FlightIcon />}
+                  {text === "Scooters" && <ElectricScooterIcon />}
+                  {text === "Consoles" && <SportsEsportsIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
     </Box>
   );
-  console.log("working?");
+
   return (
     <div>
       <React.Fragment key={"left"}>
         <Button onClick={toggleDrawer("left", true)}>
-          {/* <img src={MenuIcon} /> */}
-          {"image here"}
+          <MenuIcon />
         </Button>
         <Drawer
           anchor={"left"}
@@ -76,4 +75,6 @@ export default function NavDrawer() {
       </React.Fragment>
     </div>
   );
-}
+};
+
+export default NavDrawer;
