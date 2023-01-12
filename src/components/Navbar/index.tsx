@@ -3,11 +3,13 @@ import cartLogo from "../../images/cartLogo.png";
 import menuLogo from "../../images/menuLogo.png";
 import { StyledNavbar } from "./styledNavbar";
 import { Link } from "react-router-dom";
+import NavDrawer from "../NavDrawer";
 
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <img className="Menu Logo" src={menuLogo} alt="Menu button" />
+      {/* <img className="Menu Logo" src={menuLogo} alt="Menu button" /> */}
+      <NavDrawer />
       <Link to="/">
         <div className="AppInfo">
           <img

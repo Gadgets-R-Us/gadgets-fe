@@ -28,7 +28,7 @@ const CategoryWrapper = (category: any) => {
       setList(data.data);
     };
     fetchData();
-  }, []);
+  }, [list]);
 
   const allItems = list.map((item: TItem) => {
     // console.log(item, "<<item");
