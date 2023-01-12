@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import CategoryWrapper from "../CategoryWrapper";
 import Item from "../../components/Item";
 import { StyledApp } from "./styledApp";
+import CartWrapper from "../CartWrapper";
 
 const App = () => {
   return (
@@ -26,6 +27,8 @@ const App = () => {
           path="/consoles"
           element={<CategoryWrapper category="Consoles" />}
         ></Route>
+
+        <Route path="/cart" element={<CartWrapper />}></Route>
 
         <Route path="/item/:name" element={<Item />}></Route>
 
