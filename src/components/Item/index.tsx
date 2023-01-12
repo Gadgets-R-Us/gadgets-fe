@@ -1,13 +1,28 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { CartContext } from "../../contexts/CartContext";
 import { StyledItem } from "./styledItem";
 const Item = () => {
   const location = useLocation();
   //destructuring location.state.item below which is coming from Link's state
   const params = location.state.item;
-
+  const { cart, setCart } = useContext<any>(CartContext);
   const specs = params.specifications.map((spec: string) => {
     return <li key={spec}>{spec}</li>;
   });
+
+  const handleClick = () => {
+    setCart([
+      ...cart,
+      {
+        id: cart.length + 1,
+        item: params.name,
+        image: params.image,
+        color: params.color,
+        price: params.price,
+      },
+    ]);
+  };
 
   return (
     <StyledItem>
@@ -22,7 +37,7 @@ const Item = () => {
       <h3>{params.longDescription}</h3>
       <h2>Specifications</h2>
       <ul className="SpecList">{specs}</ul>
-      <button>Add to Cart</button>
+      <button onClick={handleClick}>Add to Cart</button>
     </StyledItem>
   );
 };

@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import { StyledCartWrapper } from "./styledCartWrapper";
 
 const CartWrapper = () => {
+  const { cart, setCart } = useContext<any>(CartContext);
+  console.log(cart, "CartContext");
   return (
     <StyledCartWrapper>
       <h2 className="Header">Cart</h2>

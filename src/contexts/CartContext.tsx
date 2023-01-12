@@ -8,7 +8,6 @@ export const CartContext = createContext<any>(defaultContext);
 const Cart = ({ children }: any) => {
   const [cart, setCart] = useState([]);
 
-  console.log(cart, "cartContext");
   return (
     <CartContext.Provider value={{ cart, setCart }}>
       {children}
