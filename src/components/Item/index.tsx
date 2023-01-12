@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { CartContext } from "../../contexts/CartContext";
+import { ICartContext, CartContext } from "../../contexts/CartContext";
 import { StyledItem } from "./styledItem";
 const Item = () => {
   const location = useLocation();
   //destructuring location.state.item below which is coming from Link's state
   const params = location.state.item;
-  const { cart, setCart } = useContext<any>(CartContext);
+  const { cart, setCart } = useContext<ICartContext>(CartContext);
   const specs = params.specifications.map((spec: string) => {
     return <li key={spec}>{spec}</li>;
   });

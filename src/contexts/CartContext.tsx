@@ -1,10 +1,24 @@
 import { createContext, useState } from "react";
+
+interface ICartItem {
+  id: number;
+  item: string;
+  image: string;
+  color: string;
+  price: number;
+}
+
+export interface ICartContext {
+  cart: ICartItem[];
+  setCart: Function;
+}
+
 const defaultContext = {
   cart: [],
   setCart: () => {},
 };
 
-export const CartContext = createContext<any>(defaultContext);
+export const CartContext = createContext<ICartContext>(defaultContext);
 const Cart = ({ children }: any) => {
   const [cart, setCart] = useState([]);
 
