@@ -1,20 +1,20 @@
-import LiveTvIcon from "@mui/icons-material/LiveTv";
+import { ICartItem } from "../../contexts/CartContext";
 import { StyledCartItem } from "./styledCartItem";
-const CartItem = () => {
+const CartItem = ({ item, image, color, price }: ICartItem) => {
   return (
     <StyledCartItem>
       <div className="CartItemInfo">
-        <LiveTvIcon />
+        <img src={image} alt={item} />
         <div className="CartItemDetails">
-          <h3>title{}</h3>
-          <h3>Color: {}</h3>
+          <h3>{item}</h3>
+          <h3>Color: {color}</h3>
           <button>remove</button>
         </div>
       </div>
       <div className="CartItemValues">
         <div className="ItemPrice">
           <h3>Price</h3>
-          <h3>$1000{}</h3>
+          <h3>${price}</h3>
         </div>
         <select className="ItemQuantity">
           <option>1</option>
