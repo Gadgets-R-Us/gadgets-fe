@@ -4,7 +4,7 @@ const CartItem = ({ item, image, color, price }: ICartItem) => {
   return (
     <StyledCartItem>
       <div className="CartItemInfo">
-        <img src={image} alt={item} />
+        <img className="CartItemImage" src={image} alt={item} />
         <div className="CartItemDetails">
           <h3>{item}</h3>
           <h3>Color: {color}</h3>
