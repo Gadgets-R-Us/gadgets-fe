@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./containers/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import CartContext from "./contexts/CartContext";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter>
-    <App />
+    <CartContext>
+      <App />
+    </CartContext>
   </BrowserRouter>
 );
 
